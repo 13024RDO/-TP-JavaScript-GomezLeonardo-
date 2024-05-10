@@ -10,7 +10,7 @@ let descuento = 0;
 let total_descontado = 0;
 
 while(contador < cantidad_productos){
-    let precio_producto = parseInt(prompt("Ingrese el preocio de un producto"));
+    let precio_producto = parseInt(prompt("Ingrese el precio de un producto"));
     total = total + precio_producto;
     contador = contador + 1;
 }
