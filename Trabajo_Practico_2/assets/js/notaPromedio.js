@@ -1,13 +1,38 @@
-let edad = parseInt(prompt("Ingrese su Edad"));
+let nota1 = parseInt(prompt("Ingrese su primera nota"));
 
-if (edad >= 0 && edad <= 12){
-    alert("Usted es un niño de 0 a 12 años")
-}else if(edad >= 13 && edad <= 19){
-    alert("Usted es un adolecente de 13 a 19 años")
-}else if(edad >= 20 && edad <= 59){
-    alert("Usted es un adulto de 20 a 59 años")
-}else if(edad >= 60){
-    alert("Usted es un adulto mayor de 60 años")
-}else{
-    alert("Por favor ingrese un valor valido")
+if(isNaN(nota1)){
+    alert("ERROR: No se ingreso una nota")
+}
+
+let nota2 = parseInt(prompt("Ingrese su segunda nota"));
+
+if(isNaN(nota2)){
+    alert("ERROR: No se ingreso una nota")
+}
+
+let nota3 = parseInt(prompt("Ingrese su tercer nota"));
+
+if(isNaN(nota3)){
+    alert("ERROR: No se ingreso una nota")
+}
+
+let suma = nota1 + nota2 + nota3;
+let promedio = suma / 3;
+
+
+promedio = parseInt(promedio);
+
+if(promedio >= 1 && promedio <= 3 ){
+    alert("Nota Insuficiente");
+}else if(promedio >= 4 && promedio <= 5){
+    alert("Nota Regular");
+}else if(promedio >= 6 && promedio <= 7){
+    alert("Nota buena");
+}else if(promedio >= 8 && promedio <= 9){
+    alert("Nota muy buena");
+}else if(promedio == 10){
+    alert("Nota Sobresaliente");
+}
+else{
+    alert("ERROR: No se pudo determinar el promedio")
 }
