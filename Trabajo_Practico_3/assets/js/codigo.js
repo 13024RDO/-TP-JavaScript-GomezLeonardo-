@@ -60,3 +60,13 @@ function EditarTarea() {
     }
 }
 
+function EliminarTarea() {
+    VerTareas();
+    let index = parseInt(prompt("Ingrese el número de la tarea que desea eliminar:")) - 1;
+    if (index >= 0 && index < tareas.length) {
+        let tareaEliminada = tareas.splice(index, 1);
+        console.log("Tarea eliminada:", tareaEliminada[0]);
+    } else {
+        console.log("Número de tarea no válido.");
+    }
+}
