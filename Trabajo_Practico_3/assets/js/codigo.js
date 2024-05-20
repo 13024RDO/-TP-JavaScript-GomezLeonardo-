@@ -44,3 +44,19 @@ function AgregarTarea() {
     }
 }
 
+function EditarTarea() {
+    VerTareas();
+    let index = parseInt(prompt("Ingrese el número de la tarea que desea editar:")) - 1;
+    if (index >= 0 && index < tareas.length) {
+        let nuevaTarea = prompt("Ingrese la nueva descripción de la tarea:");
+        if (nuevaTarea && nuevaTarea.trim()) {
+            tareas[index] = nuevaTarea;
+            console.log("Tarea actualizada:", nuevaTarea);
+        } else {
+            console.log("No se actualizó la tarea. La entrada estaba vacía.");
+        }
+    } else {
+        console.log("Número de tarea no válido.");
+    }
+}
+
