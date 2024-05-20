@@ -3,8 +3,7 @@ let operacion = 0;
 
 while (operacion !== 5) {
     operacion = parseInt(prompt(
-        "Lista de tareas\n"
-         +
+        "Lista de tareas\n" +
         "1- Ver lista de tareas\n" +
         "2- Agregar Tareas\n" +
         "3- Editar Tarea\n" +
@@ -26,23 +25,31 @@ while (operacion !== 5) {
             EliminarTarea();
             break;
         case 5:
-            console.log("Saliendo del programa...");
+            alert("Saliendo del programa...");
             break;
         default:
-            console.log("Opción no válida. Por favor, elija una opción entre 1 y 5.");
+            alert("Opción no válida. Por favor, elija una opción entre 1 y 5.");
     }
 }
 
+function VerTareas() {
+    if (tareas.length === 0) {
+        alert("No hay tareas en la lista.");
+    } else {
+        alert(tareas)
+    }
+}
 
 function AgregarTarea() {
     let tarea = prompt("Agrega una tarea:");
-    if (tarea && tarea.trim()) {
-        tareas.push(tarea);
-        console.log("Tarea agregada:", tarea);
+    if (tarea && tarea.trim().length > 0) {
+        tareas.push(tarea.trim());
+        alert("Tarea agregada: " + tarea.trim());
     } else {
-        console.log("No se agregó ninguna tarea. La entrada estaba vacía.");
+        alert("No se agregó ninguna tarea. La entrada estaba vacía o solo contenía espacios.");
     }
 }
+
 
 function EditarTarea() {
     VerTareas();
@@ -51,12 +58,12 @@ function EditarTarea() {
         let nuevaTarea = prompt("Ingrese la nueva descripción de la tarea:");
         if (nuevaTarea && nuevaTarea.trim()) {
             tareas[index] = nuevaTarea;
-            console.log("Tarea actualizada:", nuevaTarea);
+            alert("Tarea actualizada:", nuevaTarea);
         } else {
-            console.log("No se actualizó la tarea. La entrada estaba vacía.");
+            alert("No se actualizó la tarea. La entrada estaba vacía.");
         }
     } else {
-        console.log("Número de tarea no válido.");
+        alert("Número de tarea no válido.");
     }
 }
 
@@ -65,8 +72,8 @@ function EliminarTarea() {
     let index = parseInt(prompt("Ingrese el número de la tarea que desea eliminar:")) - 1;
     if (index >= 0 && index < tareas.length) {
         let tareaEliminada = tareas.splice(index, 1);
-        console.log("Tarea eliminada:", tareaEliminada[0]);
+        alert("Tarea eliminada:", tareaEliminada[0]);
     } else {
-        console.log("Número de tarea no válido.");
+        alert("Número de tarea no válido.");
     }
 }
